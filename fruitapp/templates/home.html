@@ -1,0 +1,73 @@
+<html>
+    <head>
+        <title>Welcome Page</title>
+    </head>
+<body>
+<h1>Fruit Store...!</h1>
+
+<hr>
+    <body>
+        
+        <!-- <form action="{% url 'home' %}" method="post">
+            {% csrf_token %}
+            Fruit Id:- <input type="number" name="fid" value="{{fruit.id}}" readonly><br><br>
+            Fruit Name:- <input type="text" placeholder="Enter fruit name" name="fname" value="{{fruit.name}}"> <br><br>
+            Fruit Price:- <input type="number" placeholder="Enter fruit price" name="fprice" value="{{fruit.price}}"> <br><br>
+            Fruit Qty:- <input type="number" placeholder="Enter fruit qty" name="fqty" value="{{fruit.qty}}"> <br><br>
+            {% if fruit.is_available %}
+                Fruit Is available:- <input type="text" name="favailable" value="Yes"> <br><br>
+            {% else %}
+                Fruit Is available:- <input type="text" name="favailable" value="No"> <br><br>
+            {% endif %}
+            <input type="submit" value="Submit">
+        </form>
+        <br> -->
+
+
+
+        <!-- forms  -->
+        <form action="{% url 'home' %}" method="post">
+            {% csrf_token %}
+            <div class="mb-3 mt-3">
+              <label class="form-label">Fruit Id:</label>
+              <input type="number" class="form-control" name="fid" readonly>
+            </div>
+            <div class="mb-3 mt-3">
+                <label class="form-label">Fruit Name:</label>
+                <input type="text" class="form-control" placeholder="Enter fruit name" name="fname" value="{{fruit.name}}">
+            </div>
+            <div class="mb-3 mt-3">
+              <label class="form-label">Fruit Price:</label>
+              <input type="number" class="form-control" placeholder="Enter fruit price" name="fprice" value="{{fruit.price}}">
+            </div>
+            <div class="mb-3 mt-3">
+                <label class="form-label">Fruit Qty:</label>
+                <input type="number" class="form-control" placeholder="Enter fruit qty" name="fqty" value="{{fruit.qty}}">
+            </div>
+            <div class="form-check mb-3">
+                <label class="form-check-label">
+                    {% if fruit.is_available %}
+                        <input class="form-check-input" type="checkbox" name="favailable" checked> Is available</label>
+                    {% else %}
+                        <input class="form-check-input" type="checkbox" name="favailable" Is available </label> 
+                    {% endif %}
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </form>
+
+        <br>
+        <a href="{%  url 'show_fruits' %}">Show Fruits</a><br>
+        <hr>
+        <a href="{% url 'available_fruit' %}">Available_Fruits</a>
+        <hr>
+        <a href="{% url 'not_available_fruit' %}">Not_Available_Fruits</a>
+
+
+
+        
+
+    </body>
+    </html> 
+
+
+    

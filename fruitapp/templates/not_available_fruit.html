@@ -1,0 +1,48 @@
+<html>
+    <head>
+        <title><html>
+    <head>
+        <title>Not_availale_fuits</title>        
+    </head>
+<body>
+
+<h1>Not_availale_fuits</h1>
+
+<table border="2" style="width: 50%">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Qty</th>
+            <th>Price</th>
+            <th>Is Available</th>
+ 
+        </tr>
+    </thead>
+    {% for fruit in not_avl_fruits %}
+    <tr>
+
+        <td>{{fruit.id}}</td>
+        <td>{{fruit.name}}</td>
+        <td>{{fruit.qty}}</td>
+        <td>{{fruit.price}}</td>
+        {% if fruit.is_available %}
+            <td>Yes</td>
+        {% else %}
+            <td>No</td>
+        {% endif %}
+        
+
+
+    </tr>
+
+    {% endfor %}
+
+</table>
+
+<br>
+
+<a href="{% url 'home' %}">Back to Home</a>
+
+</body>
+</html>
